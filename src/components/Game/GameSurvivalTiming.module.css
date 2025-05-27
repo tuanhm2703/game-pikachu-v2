@@ -1,0 +1,11 @@
+.timingInfo {
+  background: #fff;
+  color: #A80000;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.timingText {
+  font-size: 10px;
+  text-align: center;
+} 

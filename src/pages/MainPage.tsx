@@ -7,31 +7,35 @@ import SwitchLanguage from "../components/SwitchLanguage";
 import { Helmet } from "react-helmet";
 import playerState from "../recoil/atoms/playerState";
 import Welcome from "../components/Welcome";
+import styles from './MainPage.module.css';
 
 const MainPage = () => {
   const { t } = useTranslation();
   const { playPopUpOnSound } = useRecoilValue(gameSoundState);
 
   return (
-    <div className="main-board">
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>Pika pika! - Main board</title>
-      </Helmet>
-      <nav className="navigation">
-        <Welcome />
-        <Link to={Routes.SINGLE_PLAYER_PAGE}>
-          <button onClick={() => playPopUpOnSound && playPopUpOnSound()}>
-            {t("Single player")}
-          </button>
-        </Link>
-        <Link to={Routes.MULTI_PLAYER_PAGE}>
-          <button onClick={() => playPopUpOnSound && playPopUpOnSound()}>
-            {t("Multi player")}
-          </button>
-        </Link>
-        <SwitchLanguage />
-      </nav>
+    <div className={styles.background}>
+      <div className={styles.overlay}>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Pika pika! - Main board</title>
+        </Helmet>
+        <h1 className={styles.title}>Pika Pika!</h1>
+        <nav className={styles.navigation}>
+          <Welcome />
+          <Link to={Routes.SURVIVAL_MODE_PAGE}>
+            <button className={styles.button} onClick={() => playPopUpOnSound && playPopUpOnSound()}>
+              {t("Easy")}
+            </button>
+          </Link>
+          <Link to={Routes.SURVIVAL_MODE_PAGE}>
+            <button className={styles.button} onClick={() => playPopUpOnSound && playPopUpOnSound()}>
+              {t("Hard")}
+            </button>
+          </Link>
+          <SwitchLanguage />
+        </nav>
+      </div>
     </div>
   );
 };

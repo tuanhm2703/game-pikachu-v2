@@ -9,10 +9,9 @@ const Welcome = () => {
   const { player } = useRecoilValue(playerState);
   return (
     <>
-      <h2 className="text-center">
-        {t("Welcome")},{getPlayerName(player)}
+      <h2 className="text-center" style={{ color: '#A80000' }}>
+        {t("Welcome")}, {getPlayerName(player)}
       </h2>
-      <p className="text-center">ID: {getPlayerID(player)}</p>
     </>
   );
 };

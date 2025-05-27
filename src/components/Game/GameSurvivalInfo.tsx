@@ -14,11 +14,10 @@ const GameSurvivalInfo: FC<{ hasTiming?: boolean }> = ({
   const { replayGame } = useGameActions(GameMode.SURVIVAL_MODE);
 
   return (
-    <div className="game-info">
-      <GameTitle title={t("Survival mode")} />
+    <div className="game-info" style={{ width: '100%' }}>
+      <GameTitle title={t("Pika Pika!")} />
       <GameLevel />
       <GameSurvivalTiming hasTiming={hasTiming} />
-      <GameReplay action={replayGame} />
     </div>
   );
 };

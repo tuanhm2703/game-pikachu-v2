@@ -17,6 +17,7 @@ import {
 } from "../../types/game";
 import { hasAnyConnectLine } from "../../utils/game";
 import { timeConvert } from "../../utils/time";
+import styles from './GameSurvivalTiming.module.css';
 
 const GameSurvivalTiming: FC<{ hasTiming: boolean }> = ({
   hasTiming = false,
@@ -145,11 +146,8 @@ const GameSurvivalTiming: FC<{ hasTiming: boolean }> = ({
           {pendingTiming.current}
         </div>
       )}
-      <p className="text-center">
-        {t("Your time")}: {timeConvert(timing.current)}
-      </p>
-      <p className="text-center">
-        {t("Remaining time")}: {timeConvert(remainTiming.current)}
+      <p className={styles.timingText}>
+        <span className={styles.timingInfo}>{t("Your time")}: {timeConvert(timing.current)}</span> | <span className={styles.timingInfo}>{t("Remaining time")}: {timeConvert(remainTiming.current)}</span>
       </p>
     </>
   );

@@ -10,12 +10,15 @@ import SwitchLanguage from "../components/SwitchLanguage";
 import GameSurvivalInfo from "../components/Game/GameSurvivalInfo";
 import { GameMode } from "../types/game";
 import { Helmet } from "react-helmet";
+import styles from './MainPage.module.css';
+import { useGameActions } from "../hooks/useGameActions";
+import GameReplay from "../components/Game/GameReplay";
 
 const SurvivalModePage = () => {
   const { t } = useTranslation();
   const { status } = useRecoilValue(gameState);
   const { playPopUpOnSound } = useRecoilValue(gameSoundState);
-
+  const { replayGame } = useGameActions(GameMode.SURVIVAL_MODE);
   return (
     <div className="game-container">
       <Helmet>
@@ -29,24 +32,10 @@ const SurvivalModePage = () => {
       </div>
       <div className="sidebar">
         <GameSurvivalInfo hasTiming />
-        <div>
-          <blockquote className="game-helper">
-            {t("Try your best not to run out of time as long as possible")}
-          </blockquote>
-          <blockquote className="game-helper">
-            {t("Your time will increase when you match a pair of pokemon")}
-          </blockquote>
-          <blockquote className="game-helper">
-            {t("Choosing the wrong pair will decrease the time")}
-          </blockquote>
-        </div>
-        <Link to={Routes.SINGLE_PLAYER_PAGE}>
-          <button onClick={() => playPopUpOnSound && playPopUpOnSound()}>
-            {t("Back")}
-          </button>
-        </Link>
-        <p className="mobile-helper">{t("Scroll down to play")}</p>
-        <SwitchLanguage />
+        <p style={{ fontSize: '12px', border: '1px solid #fff', padding: '0.5rem', borderRadius: '20px', margin: 'autp' }}>Thời gian sẽ tăng thêm khi chọn 
+        khớp một cặp pokemon</p>
+        <p style={{ fontSize: '12px', border: '1px solid #fff', padding: '0.5rem', borderRadius: '20px', margin: 'auto' }}>Chọn sai cặp sẽ bị giảm thời gian</p>
+        <GameReplay action={replayGame} />
       </div>
     </div>
   );

@@ -10,6 +10,7 @@ import SwitchLanguage from "../components/SwitchLanguage";
 import { Helmet } from "react-helmet";
 import { GameMode } from "../types/game";
 import Welcome from "../components/Welcome";
+import styles from './SinglePlayerPage.module.css';
 
 const SinglePlayerPage = () => {
   const { t } = useTranslation();
@@ -21,36 +22,32 @@ const SinglePlayerPage = () => {
   }, [resetGame]);
 
   return (
-    <div className="game-container">
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>Pika pika! - Single player</title>
-      </Helmet>
-      <div className="game-board">
-        <RankBoard />
-      </div>
-      <div className="sidebar">
-        <div className="game-info">
-          <h1 className="game-title">{t("Single player")}</h1>
-          <Welcome />
-        </div>
-        <div>
+    <div className={styles.background}>
+      <div className={styles.overlay}>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Pika pika! - Single player</title>
+        </Helmet>
+        <h1 className={styles.title}>{t("Single player")}</h1>
+        <Welcome />
+        <div className={styles.form} style={{marginBottom: 24}}>
           <Link to={Routes.SURVIVAL_MODE_PAGE}>
-            <button onClick={() => playPopUpOnSound && playPopUpOnSound()}>
+            <button className={styles.button} onClick={() => playPopUpOnSound && playPopUpOnSound()}>
               {t("Survival mode")}
             </button>
           </Link>
           <Link to={Routes.SPEED_MODE_PAGE}>
-            <button onClick={() => playPopUpOnSound && playPopUpOnSound()}>
+            <button className={styles.button} onClick={() => playPopUpOnSound && playPopUpOnSound()}>
               {t("Speed mode")}
             </button>
           </Link>
           <Link to={Routes.MAIN_PAGE}>
-            <button onClick={() => playPopUpOnSound && playPopUpOnSound()}>
+            <button className={styles.button} onClick={() => playPopUpOnSound && playPopUpOnSound()}>
               {t("Back")}
             </button>
           </Link>
         </div>
+        <RankBoard />
         <SwitchLanguage />
       </div>
     </div>

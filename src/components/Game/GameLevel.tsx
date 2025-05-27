@@ -7,7 +7,7 @@ const GameLevel = () => {
   const { level } = useRecoilValue(gameState);
   return (
     <h3 className="game-title">
-      {t("Level")} {level} / 14
+      {t("Level")} <span style={{ color: '#A80000', background: '#fff', padding: '4px', borderRadius: '15px' }}>{level} / 14</span>
     </h3>
   );
 };

@@ -1,11 +1,38 @@
 body {
   color: #fff;
   /* overflow-x: hidden; */
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
 }
 img {
   width: 100%;
   height: auto;
   object-fit: cover;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+input,
+a,
+blockquote,
+.game-title,
+.main-board,
+.sidebar,
+.game-helper,
+.text-big-title,
+.player-box,
+.message,
+.message-content,
+.service-status {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif !important;
 }
 
 h1 {
@@ -190,13 +217,7 @@ button:hover {
 }
 
 .app {
-  background: rgb(2, 0, 36);
-  background: radial-gradient(
-    circle,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(9, 9, 121, 1) 35%,
-    rgba(0, 212, 255, 1) 100%
-  );
+  background: linear-gradient(135deg, #a80000 0%, #d32f2f 40%, #fff 70%, #a80000 100%);
   min-height: 100vh;
   padding: 0 20px;
   box-sizing: border-box;
@@ -233,7 +254,6 @@ button:hover {
   width: 100%;
   height: calc(100vh - 40px);
   border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.16);
   display: grid;
   grid-template-columns: 4fr 1fr;
   place-items: center;
@@ -250,7 +270,7 @@ button:hover {
   background-size: 300px auto;
   background-position: center 75px;
   background-repeat: no-repeat;
-  background-image: url(assets/images/bg-head.png);
+  /* background-image: url(assets/images/bg-head.png); */
   position: relative;
 }
 
@@ -328,20 +348,14 @@ button:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid #26a0da;
   border-radius: 0;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url(assets/images/bg-pikachu.jpeg);
   position: relative;
   grid-area: gameBoard;
-  background-color: #000;
 }
 
-.game-completed.game-board {
-  background: #000;
-}
 
 .game-completed .game-info {
   display: flex;
@@ -372,22 +386,22 @@ button:hover {
 .game-pokemon {
   display: grid;
   grid-template-columns: repeat(10, calc(100% / 10));
-  place-items: stretch;
+  /* place-items: stretch; */
   justify-content: center;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   color: #fff;
 }
 
 .game-overlay {
   display: grid;
   grid-template-columns: repeat(10, calc(100% / 10));
-  place-items: stretch;
+  /* place-items: stretch; */
   justify-content: center;
   pointer-events: none;
   position: absolute;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
 }
 
 .game-overlay.freezing-board {
@@ -479,16 +493,21 @@ button:hover {
 }
 
 .pokemon-card {
+  /* Fallback background color based on card-background.png */
+  background-color: #f4b066;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 1px solid #fff;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
   cursor: pointer;
-  background-color: #26a0da;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   transition: all 0.5s;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  height: auto;
 }
 
 .pokemon-card.selected {
@@ -511,6 +530,9 @@ button:hover {
   color: transparent;
   position: relative;
   transition: all 2s;
+  aspect-ratio: 1 / 1;
+    width: 100%;
+    height: auto
 }
 
 @keyframes blinker {
@@ -1201,5 +1223,124 @@ i.icono-volumeMute {
   }
   .hidden-mobile {
     display: none;
+  }
+  .game-pokemon {
+    grid-auto-rows: 1fr !important;
+  }
+  .pokemon-card, .line-card {
+    aspect-ratio: 1 / 1 !important;
+    width: 100% !important;
+    height: auto !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+  }
+  .game-container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    grid-template-columns: none;
+    grid-template-areas: none;
+    padding: 0;
+  }
+  .sidebar {
+    order: -1;
+    min-width: 0;
+    max-width: 100vw;
+    border-radius: 0 0 10px 10px;
+    box-sizing: border-box;
+    padding: 16px 8px;
+    min-height: unset;
+    height: auto;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .game-board {
+    width: 100vw;
+    height: auto;
+    min-height: 60vh;
+    border-radius: 0;
+  }
+}
+
+/* Survival Mode Layout Customization */
+.survival-mode-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1340px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.16);
+  border-radius: 10px;
+  min-height: calc(100vh - 40px);
+  box-sizing: border-box;
+}
+
+.survival-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 24px 0 24px;
+  box-sizing: border-box;
+}
+
+.survival-header .game-title {
+  margin-bottom: 16px;
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+.survival-header-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 32px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.survival-header-content > * {
+  margin: 0 8px;
+}
+
+.survival-helper-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 260px;
+}
+
+.survival-header .mobile-helper {
+  margin-top: 12px;
+}
+
+.survival-mode-layout main.game-board {
+  margin-top: 24px;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@media (max-width: 1024px) {
+  .survival-header-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .survival-mode-layout {
+    padding: 0;
+    min-height: 100vh;
+  }
+  .survival-mode-layout main.game-board {
+    margin-top: 12px;
   }
 }

@@ -3,6 +3,7 @@ import { useRecoilValue } from "recoil";
 import useLocalStorage from "../hooks/useLocalStorage";
 import gameSoundState from "../recoil/atoms/gameSoundState";
 import i18n from "../services/i18n";
+import styles from '../pages/MainPage.module.css';
 
 const SwitchLanguage = () => {
   const { t } = useTranslation();
@@ -15,7 +16,7 @@ const SwitchLanguage = () => {
   };
 
   return (
-    <h5 className="select-language">
+    <h5 className={styles.switchLanguage}>
       {t("Language")}:{" "}
       <strong onClick={() => changeLanguage("en")}>{t("English")}</strong> -{" "}
       <strong onClick={() => changeLanguage("vi")}>{t("Vietnamese")}</strong>

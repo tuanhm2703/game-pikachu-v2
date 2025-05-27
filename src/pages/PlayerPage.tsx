@@ -8,6 +8,7 @@ import SwitchLanguage from "../components/SwitchLanguage";
 import { useHistory } from "react-router-dom";
 import { Routes } from "../routes/CONSTANTS";
 import { nanoid } from "nanoid";
+import styles from './PlayerPage.module.css';
 
 const PlayerPage = () => {
   const { t } = useTranslation();
@@ -33,21 +34,21 @@ const PlayerPage = () => {
   };
 
   return (
-    <div className="main-board">
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>Pika pika! - Player board</title>
-      </Helmet>
-      <div>
-        <form onSubmit={handleSubmit}>
+    <div className={styles.background}>
+      <div className={styles.overlay}>
+        <h1 className={styles.title}>Pika Pika!</h1>
+        <form onSubmit={handleSubmit} className={styles.form}>
           <input
             name="playerName"
+            type="text"
             autoFocus
+            color="black"
             placeholder={t("Enter your name here")}
             maxLength={20}
             autoComplete="off"
+            className={styles.input}
           />
-          <button>{t("Submit")}</button>
+          <button className={styles.button}>{t("Submit")}</button>
         </form>
         <SwitchLanguage />
       </div>

@@ -55,8 +55,8 @@ function App() {
     <div className="app">
       {soundReady && (
         <>
-          <ToggleMusic />
-          <ToggleSound />
+          {/* <ToggleMusic />
+          <ToggleSound /> */}
         </>
       )}
       {!soundReady && <h1>{t("Preparing resource...")}</h1>}

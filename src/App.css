@@ -209,13 +209,13 @@ button:hover {
 .sidebar {
   padding: 32px 24px;
   height: 100%;
-  max-height: 100vh;
+  /* max-height: 100vh; */
   justify-content: space-between;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .app {
@@ -260,13 +260,13 @@ button:hover {
   grid-template-columns: 4fr 1fr;
   place-items: center;
   grid-template-areas: "gameBoard gameInfo";
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .main-board {
   width: calc(100% - 40px);
   height: calc(100vh - 40px);
-  max-height: 100vh;
+  /* max-height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -276,13 +276,13 @@ button:hover {
   background-repeat: no-repeat;
   /* background-image: url(assets/images/bg-head.png); */
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .chat-board {
   width: calc(100% - 40px);
   height: calc(100vh - 40px);
-  max-height: 100vh;
+  /* max-height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -292,13 +292,13 @@ button:hover {
   background-repeat: no-repeat;
   background-image: url(assets/images/bg-head.png);
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .rank-board {
   background-color: #000;
-  max-height: 100vh;
-  overflow: hidden;
+  /* max-height: 100vh; */
+  /* overflow: hidden; */
 }
 
 .game-board .game-info {
@@ -353,7 +353,7 @@ button:hover {
 .game-board {
   width: calc(100% - 40px);
   height: calc(100% - 40px);
-  max-height: 100vh;
+  /* max-height: 100vh; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -364,7 +364,7 @@ button:hover {
   background-repeat: no-repeat;
   position: relative;
   grid-area: gameBoard;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 
@@ -1145,10 +1145,11 @@ i.icono-volumeMute {
   }
   .game-container {
     padding: 0;
-    height: 100vh;
+    height: calc(var(--real-vh, 1vh) * 100);
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-template-areas: "gameInfo" "gameBoard";
+    /* overflow: visible; */
   }
   .game-board {
     width: 100vw;
@@ -1200,6 +1201,14 @@ i.icono-volumeMute {
   }
   .player-box {
     width: auto;
+  }
+  .main-board,
+  .chat-board,
+  .game-board,
+  .sidebar,
+  .rank-board {
+    /* max-height: none; */
+    /* overflow: visible; */
   }
 }
 
@@ -1273,6 +1282,14 @@ i.icono-volumeMute {
     height: auto;
     min-height: 60vh;
     border-radius: 0;
+  }
+  .main-board,
+  .chat-board,
+  .game-board,
+  .sidebar,
+  .rank-board {
+    /* max-height: none; */
+    /* overflow: visible; */
   }
 }
 
@@ -1363,11 +1380,11 @@ i.icono-volumeMute {
     max-width: 1400px;
     margin: 0 auto;
     height: 90vh;
-    max-height: 100vh;
+    /* max-height: 100vh; */
     border-radius: 16px;
     box-shadow: 0 4px 32px rgba(0,0,0,0.10);
     background: rgba(0,0,0,0.10);
-    overflow: hidden;
+    /* overflow: hidden; */
   }
   .game-board {
     grid-area: gameBoard;
@@ -1375,10 +1392,10 @@ i.icono-volumeMute {
     height: 100%;
     min-width: 0;
     min-height: 0;
-    max-height: 100vh;
+    /* max-height: 100vh; */
     border-radius: 16px 0 0 16px;
     box-shadow: none;
-    overflow: hidden;
+    /* overflow: hidden; */
   }
   .sidebar {
     grid-area: gameInfo;
@@ -1386,7 +1403,7 @@ i.icono-volumeMute {
     height: 100%;
     min-width: 0;
     min-height: 0;
-    max-height: 100vh;
+    /* max-height: 100vh; */
     border-radius: 0 16px 16px 0;
     box-shadow: none;
     display: flex;
@@ -1395,6 +1412,6 @@ i.icono-volumeMute {
     justify-content: flex-start;
     padding: 32px 16px;
     background: rgba(255,255,255,0.08);
-    overflow: hidden;
+    /* overflow: hidden; */
   }
 }

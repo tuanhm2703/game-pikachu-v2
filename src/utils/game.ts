@@ -11,7 +11,7 @@ import {
 } from "../types/game";
 
 const BASE_URL =
-  "game-pikachu-v2/build/assets/images/";
+  "assets/images/";
 
 export let pokemonList: Pokemon[] = [
   { id: "poke-0", matched: false, image: `${BASE_URL}1.png` },

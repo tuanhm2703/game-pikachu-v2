@@ -32,9 +32,9 @@ const SurvivalModePage = () => {
       </div>
       <div className="sidebar">
         <GameSurvivalInfo hasTiming />
-        <p style={{ fontSize: '12px', border: '1px solid #fff', padding: '0.5rem', borderRadius: '20px', margin: 'autp' }}>Thời gian sẽ tăng thêm khi chọn 
+        <p style={{ textAlign: 'center', fontSize: '10px', border: '1px solid #fff', padding: '0.5rem', borderRadius: '20px', margin: 'auto', marginBottom: '0.5rem' }}>Thời gian sẽ tăng thêm khi chọn 
         khớp một cặp pokemon</p>
-        <p style={{ fontSize: '12px', border: '1px solid #fff', padding: '0.5rem', borderRadius: '20px', margin: 'auto' }}>Chọn sai cặp sẽ bị giảm thời gian</p>
+        <p style={{ textAlign: 'center', fontSize: '10px', border: '1px solid #fff', padding: '0.5rem', borderRadius: '20px', margin: 'auto' }}>Chọn sai cặp sẽ bị giảm thời gian</p>
         <GameReplay action={replayGame} />
       </div>
     </div>

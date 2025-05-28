@@ -18,7 +18,7 @@ const MainPage = () => {
       <div className={styles.overlay}>
         <Helmet>
           <meta charSet="utf-8" />
-          <title>Pika pika! - Main board</title>
+          <title>THE C.I.U - Pika pika! - Main board</title>
         </Helmet>
         <h1 className={styles.title}>Pika Pika!</h1>
         <nav className={styles.navigation}>

@@ -8,4 +8,24 @@
 .timingText {
   font-size: 10px;
   text-align: center;
+}
+
+@media (orientation: landscape) {
+  .timingText {
+    font-size: 16px;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+  .timingInfo {
+    padding: 4px 10px;
+    font-size: 8px;
+    text-align: center;;
+    border-radius: 8px;
+  }
 } 

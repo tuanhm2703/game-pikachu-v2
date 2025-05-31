@@ -120,7 +120,7 @@ export default function useGameEngine(mode: GameMode) {
   useEffect(() => {
     if (status === GameStatus.RUNNING) {
       // playFanfareSound && playFanfareSound();
-      initGame(GameLevel.LEVEL_1);
+      initGame(GameLevel.LEVEL_8);
     }
   }, [location]);
 

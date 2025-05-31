@@ -507,7 +507,7 @@ button:hover {
   background-color: #f4b066;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -515,7 +515,7 @@ button:hover {
   box-shadow: 0 4px 16px rgba(0,0,0,0.15);
   cursor: pointer;
   transition: all 0.5s;
-  aspect-ratio: 5 / 4;
+  aspect-ratio: 6/ 4;
   width: 100%;
   height: auto;
 }
@@ -540,7 +540,7 @@ button:hover {
   color: transparent;
   position: relative;
   transition: all 2s;
-  aspect-ratio: 5 / 4;
+  aspect-ratio: 6/ 4;
     width: 100%;
     height: auto
 }
@@ -1247,7 +1247,7 @@ i.icono-volumeMute {
     grid-auto-rows: 1fr !important;
   }
   .pokemon-card, .line-card {
-    aspect-ratio: 1 / 1 !important;
+    aspect-ratio: 6/ 4 !important;
     width: 100% !important;
     height: auto !important;
     min-width: 0 !important;

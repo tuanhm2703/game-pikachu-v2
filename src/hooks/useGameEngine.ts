@@ -60,7 +60,7 @@ export default function useGameEngine(mode: GameMode) {
   useEffect(() => {
     if (status === GameStatus.PENDING) {
       // playFanfareSound && playFanfareSound();
-      initGame(level);
+      initGame(GameLevel.LEVEL_12);
       addNewRankingScore(mode, currentPlayer.player);
     }
     return () => {

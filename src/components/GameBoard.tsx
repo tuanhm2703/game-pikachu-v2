@@ -5,7 +5,7 @@ import { FC } from "react";
 
 const GameBoard: FC<{ mode: GameMode }> = ({ mode }) => {
   const { matrix, row, col, status } = useGameEngine(mode);
-
+  console.log("matrix", matrix);
   return (
     <div className={`game-pokemon board-${row}x${col}`}>
       {matrix &&

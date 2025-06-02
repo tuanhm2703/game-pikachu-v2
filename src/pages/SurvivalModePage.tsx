@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Routes } from "../routes/CONSTANTS";
 import GameBoard from "../components/GameBoard";
 import GameOverlay from "../components/GameOverlay";
@@ -19,6 +19,7 @@ const SurvivalModePage = () => {
   const { status } = useRecoilValue(gameState);
   const { playPopUpOnSound } = useRecoilValue(gameSoundState);
   const { replayGame } = useGameActions(GameMode.SURVIVAL_MODE);
+  const { level } = useParams();
   return (
     <div className="game-container">
       <Helmet>

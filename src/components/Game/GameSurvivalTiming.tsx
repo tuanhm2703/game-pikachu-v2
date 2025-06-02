@@ -8,6 +8,8 @@ import gameState from "../../recoil/atoms/gameState";
 import playerState from "../../recoil/atoms/playerState";
 import {
   BASE_START_TIME,
+  BASE_START_TIME_EASY,
+  BASE_START_TIME_HARD,
   BONUS_TIME,
   GameMode,
   GameStatus,
@@ -18,16 +20,19 @@ import {
 import { hasAnyConnectLine } from "../../utils/game";
 import { timeConvert } from "../../utils/time";
 import styles from './GameSurvivalTiming.module.css';
+import { useParams } from "react-router-dom";
 
 const GameSurvivalTiming: FC<{ hasTiming: boolean }> = ({
   hasTiming = false,
 }) => {
+  const { level } = useParams<{ level: string }>();
   const { t } = useTranslation();
   const { status, pokemons, matrix, row, col } = useRecoilValue(gameState);
   const { playRisingPopSound, playGlugSound } = useRecoilValue(gameSoundState);
   const [timingState, setTimingState] = useState(0);
   const timing = useRef(0);
-  const remainTiming = useRef(BASE_START_TIME);
+  const time = level === "easy" ? BASE_START_TIME_EASY : BASE_START_TIME_HARD;
+  const remainTiming = useRef(time);
   const pendingTiming = useRef(PENDING_TIME);
   const suggestTiming = useRef(0);
   const [currentPlayer, setPlayer] = useRecoilState(playerState);
@@ -41,7 +46,7 @@ const GameSurvivalTiming: FC<{ hasTiming: boolean }> = ({
 
     if (status === GameStatus.PENDING && hasTiming) {
       timing.current = 0;
-      remainTiming.current = BASE_START_TIME;
+      remainTiming.current = time;
     }
 
     if (status === GameStatus.RUNNING) {

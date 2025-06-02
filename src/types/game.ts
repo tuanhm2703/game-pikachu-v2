@@ -287,9 +287,11 @@ export const gameBattleEffect = [
   GameBattleEffect.FREEZE,
 ];
 
-export const LEVEL_MAX = GameLevel.LEVEL_14;
+export const LEVEL_MAX = GameLevel.LEVEL_12;
 export const LEVEL_BATTLE_MAX = GameLevel.LEVEL_10;
 export const BASE_START_TIME = 300;
+export const BASE_START_TIME_EASY = 300;
+export const BASE_START_TIME_HARD = 200;
 export const SUGGEST_TIME = 10;
 export const BONUS_TIME = 2;
 export const FREEZING_TIME = 3;

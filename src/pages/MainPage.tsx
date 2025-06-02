@@ -23,12 +23,12 @@ const MainPage = () => {
         <h1 className={styles.title}>Pika Pika!</h1>
         <nav className={styles.navigation}>
           <Welcome />
-          <Link to={Routes.SURVIVAL_MODE_PAGE}>
+          <Link to={Routes.SURVIVAL_MODE_EASY_PAGE}>
             <button className={styles.button} onClick={() => playPopUpOnSound && playPopUpOnSound()}>
               {t("Easy")}
             </button>
           </Link>
-          <Link to={Routes.SURVIVAL_MODE_PAGE}>
+          <Link to={Routes.SURVIVAL_MODE_HARD_PAGE}>
             <button className={styles.button} onClick={() => playPopUpOnSound && playPopUpOnSound()}>
               {t("Hard")}
             </button>

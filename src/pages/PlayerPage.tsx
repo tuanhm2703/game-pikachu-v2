@@ -24,7 +24,7 @@ const PlayerPage = () => {
         const newPlayer = playerName + "-" + nanoid(6);
         saveLocalPlayerName(newPlayer);
         setPlayer({ player: newPlayer, playerTiming: 0 });
-        history.push(Routes.MAIN_PAGE);
+        history.push(Routes.SURVIVAL_MODE_EASY_PAGE);
       } else {
         alert(t("Accept alphabet and digit only."));
       }
@@ -36,7 +36,9 @@ const PlayerPage = () => {
   return (
     <div className={styles.background}>
       <div className={styles.overlay}>
-        <h1 className={styles.title}>Pika Pika!</h1>
+        <h1>
+          <img src="game-title.png" alt="" />
+        </h1>
         <form onSubmit={handleSubmit} className={styles.form}>
           <input
             name="playerName"
@@ -50,7 +52,6 @@ const PlayerPage = () => {
           />
           <button className={styles.button}>{t("Submit")}</button>
         </form>
-        <SwitchLanguage />
       </div>
     </div>
   );

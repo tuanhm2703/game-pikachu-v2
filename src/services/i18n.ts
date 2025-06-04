@@ -98,7 +98,7 @@ i18n
           Back: "Quay về",
           Replay: "Chơi lại",
           Language: "Ngôn ngữ",
-          Level: "Cấp độ",
+          Level: "CẤP ĐỘ",
           Welcome: "Chào bạn",
           Congratulations: "Xin chúc mừng",
           Submit: "Nhập",

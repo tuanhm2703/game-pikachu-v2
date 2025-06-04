@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.96952514.chunk.css",
-    "main.js": "/static/js/main.ae7865fb.chunk.js",
-    "main.js.map": "/static/js/main.ae7865fb.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.e4253ccd.js",
-    "runtime-main.js.map": "/static/js/runtime-main.e4253ccd.js.map",
-    "static/js/2.95b1d8db.chunk.js": "/static/js/2.95b1d8db.chunk.js",
-    "static/js/2.95b1d8db.chunk.js.map": "/static/js/2.95b1d8db.chunk.js.map",
-    "static/js/3.8d73ba31.chunk.js": "/static/js/3.8d73ba31.chunk.js",
-    "static/js/3.8d73ba31.chunk.js.map": "/static/js/3.8d73ba31.chunk.js.map",
+    "main.css": "/static/css/main.2aa3585b.chunk.css",
+    "main.js": "/static/js/main.9e9b89ff.chunk.js",
+    "main.js.map": "/static/js/main.9e9b89ff.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.4ab8a784.js",
+    "runtime-main.js.map": "/static/js/runtime-main.4ab8a784.js.map",
+    "static/js/2.f03bf0ac.chunk.js": "/static/js/2.f03bf0ac.chunk.js",
+    "static/js/2.f03bf0ac.chunk.js.map": "/static/js/2.f03bf0ac.chunk.js.map",
+    "static/js/3.c5d6b7d6.chunk.js": "/static/js/3.c5d6b7d6.chunk.js",
+    "static/js/3.c5d6b7d6.chunk.js.map": "/static/js/3.c5d6b7d6.chunk.js.map",
     "static/js/4.658a696e.chunk.js": "/static/js/4.658a696e.chunk.js",
     "static/js/4.658a696e.chunk.js.map": "/static/js/4.658a696e.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.96952514.chunk.css.map": "/static/css/main.96952514.chunk.css.map",
-    "static/js/2.95b1d8db.chunk.js.LICENSE.txt": "/static/js/2.95b1d8db.chunk.js.LICENSE.txt",
-    "static/js/3.8d73ba31.chunk.js.LICENSE.txt": "/static/js/3.8d73ba31.chunk.js.LICENSE.txt",
+    "static/css/main.2aa3585b.chunk.css.map": "/static/css/main.2aa3585b.chunk.css.map",
+    "static/js/2.f03bf0ac.chunk.js.LICENSE.txt": "/static/js/2.f03bf0ac.chunk.js.LICENSE.txt",
+    "static/js/3.c5d6b7d6.chunk.js.LICENSE.txt": "/static/js/3.c5d6b7d6.chunk.js.LICENSE.txt",
     "static/media/App.css": "/static/media/bg-head.62cb20cb.png",
     "static/media/bite.aea7caff.mp3": "/static/media/bite.aea7caff.mp3",
     "static/media/disable-sound.477d0574.mp3": "/static/media/disable-sound.477d0574.mp3",
@@ -36,9 +36,9 @@
     "static/media/you-win.70d95733.mp3": "/static/media/you-win.70d95733.mp3"
   },
   "entrypoints": [
-    "static/js/runtime-main.e4253ccd.js",
-    "static/js/2.95b1d8db.chunk.js",
-    "static/css/main.96952514.chunk.css",
-    "static/js/main.ae7865fb.chunk.js"
+    "static/js/runtime-main.4ab8a784.js",
+    "static/js/2.f03bf0ac.chunk.js",
+    "static/css/main.2aa3585b.chunk.css",
+    "static/js/main.9e9b89ff.chunk.js"
   ]
 }

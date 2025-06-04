@@ -18,7 +18,7 @@ export function useGameActions(mode: GameMode) {
   const resetGameState = useResetRecoilState(gameState);
   const resetGameOverlayState = useResetRecoilState(gameOverlayState);
   const resetSelectedPokemonsState = useResetRecoilState(selectedPokemonsState);
-  const { playBiteSound, playFanfareSound, playNearlyEndTimeSound } =
+  const { playBiteSound, playFanfareSound, playNearlyEndTimeSound, playYouWinSound } =
     useRecoilValue(gameSoundState);
 
   const selectPokemon = (
@@ -64,9 +64,13 @@ export function useGameActions(mode: GameMode) {
     // addNewRankingScore(mode, player);
   };
 
-  const endGame = () => {
+  const endGame = (isWin: boolean = false) => {
     if (mode === GameMode.SURVIVAL_MODE) {
-      playNearlyEndTimeSound && playNearlyEndTimeSound();
+      if (isWin) {
+        playYouWinSound && playYouWinSound();
+      } else {
+        playNearlyEndTimeSound && playNearlyEndTimeSound();
+      }
       setGame((prevGame) => ({
         ...prevGame,
         status: GameStatus.COMPLETED,

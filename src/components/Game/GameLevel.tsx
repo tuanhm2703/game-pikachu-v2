@@ -7,7 +7,7 @@ const GameLevel = () => {
   const { t } = useTranslation();
   const { level } = useRecoilValue(gameState);
   return (
-    <h3 className="game-title">
+    <h3 className="game-title" style={{ fontSize: '16px' }}>
       {t("Level")} <span style={{ color: '#A80000', background: '#fff', padding: '4px', borderRadius: '15px' }}>{level} / {LEVEL_MAX}</span>
     </h3>
   );

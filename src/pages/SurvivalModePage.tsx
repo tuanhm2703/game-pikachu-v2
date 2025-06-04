@@ -8,18 +8,24 @@ import gameSoundState from "../recoil/atoms/gameSoundState";
 import gameState from "../recoil/atoms/gameState";
 import SwitchLanguage from "../components/SwitchLanguage";
 import GameSurvivalInfo from "../components/Game/GameSurvivalInfo";
-import { GameMode } from "../types/game";
+import { GameLevel, GameMode } from "../types/game";
 import { Helmet } from "react-helmet";
-import styles from './MainPage.module.css';
 import { useGameActions } from "../hooks/useGameActions";
 import GameReplay from "../components/Game/GameReplay";
+import { useEffect, useState } from "react";
+import GameSurvivalWinInfo from "../components/Game/GameSurvivalWinInfo";
 
 const SurvivalModePage = () => {
-  const { t } = useTranslation();
   const { status } = useRecoilValue(gameState);
-  const { playPopUpOnSound } = useRecoilValue(gameSoundState);
-  const { replayGame } = useGameActions(GameMode.SURVIVAL_MODE);
-  const { level } = useParams();
+  const { replayGame, endGame } = useGameActions(GameMode.SURVIVAL_MODE);
+  const { level } = useRecoilValue(gameState);
+  const [isWin, setIsWin] = useState(false);
+  useEffect(() => {
+    if (level === GameLevel.LEVEL_13) {
+      endGame(true);
+      setIsWin(true)
+    }
+  }, [level])
   return (
     <div className="game-container">
       <Helmet>
@@ -27,15 +33,18 @@ const SurvivalModePage = () => {
         <title>Pika pika! - Survival mode board</title>
       </Helmet>
       <div className={`game-board game-${status}`}>
-        <GameSurvivalInfo />
+        {isWin ? <GameSurvivalWinInfo /> : <GameSurvivalInfo />}
         <GameOverlay />
         <GameBoard mode={GameMode.SURVIVAL_MODE} />
       </div>
       <div className="sidebar">
         <GameSurvivalInfo hasTiming />
-        <p style={{ textAlign: 'center', fontSize: '10px', border: '1px solid #fff', padding: '0.5rem', borderRadius: '20px', margin: 'auto', marginBottom: '0.5rem' }}>Thời gian sẽ tăng thêm khi chọn 
+       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '2px' }}>
+       <p style={{ fontSize: '8px', textAlign: 'center' }}>Thời gian sẽ tăng thêm khi chọn 
         khớp một cặp pokemon</p>
-        <p style={{ textAlign: 'center', fontSize: '10px', border: '1px solid #fff', padding: '0.5rem', borderRadius: '20px', margin: 'auto' }}>Chọn sai cặp sẽ bị giảm thời gian</p>
+        <span>|</span>
+        <p style={{ fontSize: '8px', textAlign: 'center' }}>Chọn sai cặp sẽ bị giảm thời gian</p>
+       </div>
         <GameReplay action={replayGame} />
       </div>
     </div>

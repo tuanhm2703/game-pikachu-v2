@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'Clash Display Variable';
+  src: url('./assets/fonts/ClashDisplay-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-display: swap;
+}
 body {
   color: #fff;
   /* overflow-x: hidden; */
@@ -219,7 +225,7 @@ button:hover {
 }
 
 .app {
-  background: linear-gradient(135deg, #a80000 0%, #d32f2f 40%, #fff 70%, #a80000 100%);
+  background: #FF5B40;
   min-height: 100vh;
   padding: 0 20px;
   box-sizing: border-box;
@@ -387,6 +393,7 @@ button:hover {
 }
 
 .game-title {
+  font-family: 'Clash Display Variable', 'Montserrat', sans-serif !important;
   text-align: center;
   text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
   color: #fff;
@@ -697,7 +704,7 @@ button:hover {
 }
 
 .active-player.full-slot button {
-  background-image: linear-gradient(to right, #314755 0%, orangered 100%);
+  background-image: #FF5B40;
   background-position: right center;
 }
 
@@ -1378,15 +1385,13 @@ i.icono-volumeMute {
 @media (orientation: landscape) {
   .game-container {
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 5fr 2fr;
     grid-template-areas: "gameBoard gameInfo";
     max-width: 1400px;
     margin: 0 auto;
-    height: 90vh;
+    height: 100vh;
     /* max-height: 100vh; */
     border-radius: 16px;
-    box-shadow: 0 4px 32px rgba(0,0,0,0.10);
-    background: rgba(0,0,0,0.10);
     /* overflow: hidden; */
   }
   .game-board {
@@ -1414,7 +1419,8 @@ i.icono-volumeMute {
     align-items: center;
     justify-content: flex-start;
     padding: 32px 16px;
-    background: rgba(255,255,255,0.08);
+    display: flex;
+    justify-content: center;
     /* overflow: hidden; */
   }
 }

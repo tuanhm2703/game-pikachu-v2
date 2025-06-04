@@ -12,10 +12,8 @@ const GameTitle: FC<{ title: string }> = ({ title }) => {
   const { status } = useRecoilValue(gameState);
 
   return (
-    <h1 className="game-title">
-      {status === GameStatus.COMPLETED
-        ? t("Congratulations") + " " + getPlayerName(player)
-        : title}
+    <h1 className="game-title" style={{ fontSize: '50px' }}>
+      <img src="game-title.png" alt="" />
     </h1>
   );
 };

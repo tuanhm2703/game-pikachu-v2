@@ -152,7 +152,7 @@ const GameSurvivalTiming: FC<{ hasTiming: boolean }> = ({
         </div>
       )}
       <p className={styles.timingText}>
-        <span className={styles.timingInfo}>{t("Your time")}: {timeConvert(timing.current)}</span> | <span className={styles.timingInfo}>{t("Remaining time")}: {timeConvert(remainTiming.current)}</span>
+        <span className={styles.timingInfo} style={{ fontSize: '30px !important' }}>{t("Your time") + ": " + timeConvert(remainTiming.current)}</span>
       </p>
     </>
   );

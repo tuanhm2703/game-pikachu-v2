@@ -28,12 +28,6 @@ const MainPage = () => {
               {t("Easy")}
             </button>
           </Link>
-          <Link to={Routes.SURVIVAL_MODE_HARD_PAGE}>
-            <button className={styles.button} onClick={() => playPopUpOnSound && playPopUpOnSound()}>
-              {t("Hard")}
-            </button>
-          </Link>
-          <SwitchLanguage />
         </nav>
       </div>
     </div>

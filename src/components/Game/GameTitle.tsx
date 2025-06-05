@@ -13,7 +13,7 @@ const GameTitle: FC<{ title: string }> = ({ title }) => {
 
   return (
     <h1 className="game-title" style={{ fontSize: '50px' }}>
-      <img src="game-title.png" alt="" />
+      <img src="game-title-2.png" alt="" />
     </h1>
   );
 };

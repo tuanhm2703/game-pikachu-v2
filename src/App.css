@@ -227,7 +227,6 @@ button:hover {
 .app {
   background: #FF5B40;
   min-height: 100vh;
-  padding: 0 20px;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -307,7 +306,7 @@ button:hover {
   /* overflow: hidden; */
 }
 
-.game-board .game-info {
+.game-board .game-info, .game-container > .game-info {
   position: absolute;
   top: 0;
   left: 0;
@@ -321,12 +320,12 @@ button:hover {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-.game-board.game-pending .game-info * {
+.game-container:has(.game-pending) > .game-info * {
   display: none;
 }
 
-.game-board.game-pending .game-info #count-down-pending-timing,
-.game-board.game-ready .game-info #count-down-pending-timing {
+.game-container:has(.game-pending) .game-info #count-down-pending-timing,
+.game-container:has(.game-ready) .game-info #count-down-pending-timing {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -337,7 +336,7 @@ button:hover {
   border: 3px solid #fff;
 }
 
-.game-board.game-pending .battle-rule {
+.game-container:has(.game-pending) .battle-rule {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -347,12 +346,12 @@ button:hover {
   position: absolute;
 }
 
-.game-board.game-pending .game-info .battle-rule * {
+.game-container:has(.game-pending) .game-info .battle-rule * {
   display: block;
   margin: 8px;
 }
 
-.game-board.game-running .game-info {
+.game-container:has(.game-running) .game-info {
   display: none;
 }
 
@@ -395,7 +394,6 @@ button:hover {
 .game-title {
   font-family: 'Clash Display Variable', 'Montserrat', sans-serif !important;
   text-align: center;
-  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
   color: #fff;
   margin: 10px 0 0 0;
 }
@@ -1173,7 +1171,7 @@ i.icono-volumeMute {
     font-weight: bold;
     text-shadow: 0px 1px #fff;
   }
-  .game-board .game-info .mobile-helper {
+  .game-container .game-info .mobile-helper {
     display: none;
   }
 
@@ -1423,4 +1421,9 @@ i.icono-volumeMute {
     justify-content: center;
     /* overflow: hidden; */
   }
+}
+.game-container .sidebar .game-info {
+  display: block !important;
+  position: relative;
+  background-color: transparent;
 }

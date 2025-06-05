@@ -8,8 +8,8 @@ const GameReplay: FC<{ action: Function }> = ({ action }) => {
   const { t } = useTranslation();
   const { player } = useRecoilValue(playerState);
   return (
-    <p style={{ width: '100%' }}>
-      <button className={styles.button} style={{ fontSize: '10px', padding: '7px' }} onClick={() => action(player)}>{t("Replay")}</button>
+    <p style={{ width: '100%', marginTop: '0px' }}>
+      <button className={styles.button} style={{ fontSize: '20px', padding: '7px' }} onClick={() => action(player)}>{t("Replay")}</button>
     </p>
   );
 };

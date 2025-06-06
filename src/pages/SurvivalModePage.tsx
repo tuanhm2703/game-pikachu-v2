@@ -18,7 +18,7 @@ const SurvivalModePage = () => {
   const [token, setToken] = useState<string>('')
   const [isWin, setIsWin] = useState(false);
   useEffect(() => {
-    if (level === GameLevel.LEVEL_2) {
+    if (level === GameLevel.LEVEL_3) {
       endGame(true);
       setIsWin(true)
     }

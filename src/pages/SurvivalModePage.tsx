@@ -24,9 +24,6 @@ const SurvivalModePage = () => {
     }
   }, [level])
   useEffect(() => {
-    if (token) {
-      console.log(token)
-    }
   }, [token])
   return (
     <div className="game-container" style={{ position: 'relative' }}>
@@ -42,10 +39,10 @@ const SurvivalModePage = () => {
       <div className="sidebar">
         <GameSurvivalInfo hasTiming />
        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '2px' }}>
-       <p style={{ fontSize: '0.5rem', textAlign: 'center', color: '#D22128' }}>Thời gian sẽ tăng thêm khi chọn 
+       <p style={{ fontSize: '7px', textAlign: 'center', color: '#D22128' }}>Thời gian sẽ tăng thêm khi chọn 
         khớp một cặp pokemon</p>
         <span style={{ color: '#D22128' }}>|</span>
-        <p style={{ fontSize: '0.5rem', textAlign: 'center', color: '#D22128' }}>Chọn sai cặp sẽ bị giảm thời gian 10s</p>
+        <p style={{ fontSize: '7px', textAlign: 'center', color: '#D22128' }}>Chọn sai cặp sẽ bị giảm thời gian 10s</p>
        </div>
         <GameReplay action={replayGame} />
         {

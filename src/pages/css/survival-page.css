@@ -1,3 +1,5 @@
 .app {
     background: #FFF4E6;
+    height: 100vh !important;
+    overflow: hidden !important;
 }

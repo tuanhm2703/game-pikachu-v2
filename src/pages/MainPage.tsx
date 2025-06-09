@@ -25,7 +25,7 @@ const MainPage = () => {
           <Welcome />
           <Link to={Routes.SURVIVAL_MODE_EASY_PAGE}>
             <button className={styles.button} onClick={() => playPopUpOnSound && playPopUpOnSound()}>
-              {t("Easy")}
+              "{t("Play")}"
             </button>
           </Link>
         </nav>

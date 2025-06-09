@@ -63,7 +63,7 @@ function App() {
       {soundReady && (
         <Switch>
           <Route path={Routes.MAIN_PAGE} exact>
-            <MainPage />
+          <PlayerPage />
           </Route>
           <Route path={Routes.SINGLE_PLAYER_PAGE} exact>
             <SinglePlayerPage />

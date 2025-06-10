@@ -10,12 +10,10 @@ import GameReplay from "../components/Game/GameReplay";
 import { useEffect, useState } from "react";
 import GameSurvivalWinInfo from "../components/Game/GameSurvivalWinInfo";
 import './css/survival-page.css';
-import Turnstile from "react-turnstile";
 const SurvivalModePage = () => {
   const { status } = useRecoilValue(gameState);
   const { replayGame, endGame } = useGameActions(GameMode.SURVIVAL_MODE);
   const { level } = useRecoilValue(gameState);
-  const [token, setToken] = useState<string>('')
   const [isWin, setIsWin] = useState(false);
   useEffect(() => {
     if (level === GameLevel.LEVEL_3) {
@@ -23,8 +21,6 @@ const SurvivalModePage = () => {
       setIsWin(true)
     }
   }, [level])
-  useEffect(() => {
-  }, [token])
   return (
     <div className="game-container" style={{ position: 'relative' }}>
         {isWin ? <GameSurvivalWinInfo /> : <GameSurvivalInfo />}
@@ -45,12 +41,6 @@ const SurvivalModePage = () => {
         <p style={{ fontSize: '7px', textAlign: 'center', color: '#D22128' }}>Chọn sai cặp sẽ bị giảm thời gian 10s</p>
        </div>
         <GameReplay action={replayGame} />
-        {
-          level >= GameLevel.LEVEL_2 && <Turnstile
-          sitekey={"0x4AAAAAAA16evNl7N_NwrK2"}
-          onVerify={token => setToken(token)}
-        />
-        }
       </div>
     </div>
   );

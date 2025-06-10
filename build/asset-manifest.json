@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/static/css/main.34e055be.chunk.css",
-    "main.js": "/static/js/main.58f5b12c.chunk.js",
-    "main.js.map": "/static/js/main.58f5b12c.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.1cf49b30.js",
-    "runtime-main.js.map": "/static/js/runtime-main.1cf49b30.js.map",
-    "static/js/2.0426d2c5.chunk.js": "/static/js/2.0426d2c5.chunk.js",
-    "static/js/2.0426d2c5.chunk.js.map": "/static/js/2.0426d2c5.chunk.js.map",
-    "static/js/3.0f24ab00.chunk.js": "/static/js/3.0f24ab00.chunk.js",
-    "static/js/3.0f24ab00.chunk.js.map": "/static/js/3.0f24ab00.chunk.js.map",
-    "static/js/4.4b547307.chunk.js": "/static/js/4.4b547307.chunk.js",
-    "static/js/4.4b547307.chunk.js.map": "/static/js/4.4b547307.chunk.js.map",
+    "main.js": "/static/js/main.ed33cb22.chunk.js",
+    "main.js.map": "/static/js/main.ed33cb22.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.46fc15ec.js",
+    "runtime-main.js.map": "/static/js/runtime-main.46fc15ec.js.map",
+    "static/js/2.eb63a6b1.chunk.js": "/static/js/2.eb63a6b1.chunk.js",
+    "static/js/2.eb63a6b1.chunk.js.map": "/static/js/2.eb63a6b1.chunk.js.map",
+    "static/js/3.0ecfafdf.chunk.js": "/static/js/3.0ecfafdf.chunk.js",
+    "static/js/3.0ecfafdf.chunk.js.map": "/static/js/3.0ecfafdf.chunk.js.map",
+    "static/js/4.12db6e8c.chunk.js": "/static/js/4.12db6e8c.chunk.js",
+    "static/js/4.12db6e8c.chunk.js.map": "/static/js/4.12db6e8c.chunk.js.map",
     "index.html": "/index.html",
     "static/css/main.34e055be.chunk.css.map": "/static/css/main.34e055be.chunk.css.map",
-    "static/js/2.0426d2c5.chunk.js.LICENSE.txt": "/static/js/2.0426d2c5.chunk.js.LICENSE.txt",
-    "static/js/3.0f24ab00.chunk.js.LICENSE.txt": "/static/js/3.0f24ab00.chunk.js.LICENSE.txt",
+    "static/js/2.eb63a6b1.chunk.js.LICENSE.txt": "/static/js/2.eb63a6b1.chunk.js.LICENSE.txt",
+    "static/js/3.0ecfafdf.chunk.js.LICENSE.txt": "/static/js/3.0ecfafdf.chunk.js.LICENSE.txt",
     "static/media/App.css": "/static/media/bg-head.62cb20cb.png",
     "static/media/bite.aea7caff.mp3": "/static/media/bite.aea7caff.mp3",
     "static/media/disable-sound.477d0574.mp3": "/static/media/disable-sound.477d0574.mp3",
@@ -37,9 +37,9 @@
     "static/media/you-win.70d95733.mp3": "/static/media/you-win.70d95733.mp3"
   },
   "entrypoints": [
-    "static/js/runtime-main.1cf49b30.js",
-    "static/js/2.0426d2c5.chunk.js",
+    "static/js/runtime-main.46fc15ec.js",
+    "static/js/2.eb63a6b1.chunk.js",
     "static/css/main.34e055be.chunk.css",
-    "static/js/main.58f5b12c.chunk.js"
+    "static/js/main.ed33cb22.chunk.js"
   ]
 }

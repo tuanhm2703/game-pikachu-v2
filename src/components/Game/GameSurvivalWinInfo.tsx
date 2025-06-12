@@ -57,7 +57,7 @@ const GameSurvivalWinInfo: FC<{ hasTiming?: boolean }> = ({
             }}>{voucherCode}</p>
           </div>
         : <div className="loader"></div>}
-        <p style={{ textAlign: 'center', fontSize: '12px', width: '220px', fontWeight: 'bold' }}>Vui lòng chụp màn hinh voucher và đưa thu ngân khi thanh toán.</p>
+        <p style={{ textAlign: 'center', fontSize: '12px', width: '220px', fontWeight: 'bold' }}>Vui lòng chụp màn hình voucher và đưa thu ngân khi thanh toán.</p>
         <GameReplay action={replayGame} />
         <ReCAPTCHA
           sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY as string}

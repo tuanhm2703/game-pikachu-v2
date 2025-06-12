@@ -16,12 +16,11 @@ const SurvivalModePage = () => {
   const { level } = useRecoilValue(gameState);
   const [isWin, setIsWin] = useState(false);
   useEffect(() => {
-    if (level === GameLevel.LEVEL_3) {
+    if (level === GameLevel.LEVEL_13) {
       endGame(true);
       setIsWin(true)
     }
   }, [level])
-  console.log("test: ", process.env.REACT_APP_RECAPTCHA_SITE_KEY)
   return (
     <div className="game-container" style={{ position: 'relative' }}>
         {isWin ? <GameSurvivalWinInfo /> : <GameSurvivalInfo />}

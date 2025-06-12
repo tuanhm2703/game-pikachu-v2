@@ -21,6 +21,7 @@ const SurvivalModePage = () => {
       setIsWin(true)
     }
   }, [level])
+  console.log("test: ", process.env.REACT_APP_RECAPTCHA_SITE_KEY)
   return (
     <div className="game-container" style={{ position: 'relative' }}>
         {isWin ? <GameSurvivalWinInfo /> : <GameSurvivalInfo />}

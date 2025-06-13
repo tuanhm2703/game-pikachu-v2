@@ -499,7 +499,7 @@ button:hover {
 .board-8x12 {
   grid-template-columns: repeat(14, calc(100% / 14));
 }
-.board-8x12 .pokemon-card {
+.board-8x12 .pokemon-card, .board-8x12 .line-card {
   aspect-ratio: 5 / 4 !important;
 }
 .board-9x12 {
@@ -524,13 +524,16 @@ button:hover {
   cursor: pointer;
   transition: all 0.5s;
   aspect-ratio: 6/ 4;
-  width: 100%;
   height: auto;
+}
+
+.pokemon-card::after {
+  background-color: #000;
 }
 
 .pokemon-card.selected {
   background-color: #314755 !important;
-  box-shadow: inset 0 0 10px 5px #bfdbfe;
+  /* box-shadow: inset 0 0 10px 5px #bfdbfe; */
 }
 .pokemon-card.hidden {
   opacity: 0;

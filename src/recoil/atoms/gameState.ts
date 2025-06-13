@@ -14,7 +14,7 @@ const gameState = atom<GameState>({
     col: 4,
     pokemons: {},
     matrix: [],
-    level: GameLevel.LEVEL_1,
+    level: GameLevel.LEVEL_12,
   },
 });
 

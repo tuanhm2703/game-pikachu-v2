@@ -17,7 +17,7 @@ const SurvivalModePage = () => {
   const { level } = useRecoilValue(gameState);
   const [isWin, setIsWin] = useState(false);
   useEffect(() => {
-    if (level >= GameLevel.LEVEL_13) {
+    if (Number.parseInt(level) >= 13) {
       endGame(true);
       setIsWin(true)
     }

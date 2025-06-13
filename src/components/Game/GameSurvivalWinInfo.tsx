@@ -21,7 +21,7 @@ const GameSurvivalWinInfo: FC<{ hasTiming?: boolean, isWin: boolean }> = ({
         return;
       }
       const token = await executeRecaptcha('get_gift');
-      const response = await fetch(`https://beta.theciu.vn/api/minigame/pikachu/get-gift?turnstile_token=${token}`);
+      const response = await fetch(`https://beta.theciu.vn/api/minigame/pikachu/get-gift?turnstile_token=${token}&version=v3`);
       const data = await response.json();
       setVoucherCode(data.data);
     } catch (error) {

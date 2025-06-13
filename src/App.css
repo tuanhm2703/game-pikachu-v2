@@ -499,8 +499,14 @@ button:hover {
 .board-8x12 {
   grid-template-columns: repeat(14, calc(100% / 14));
 }
-.board-8x12 .pokemon-card, .board-8x12 .line-card {
-  aspect-ratio: 5 / 4 !important;
+.board-8x9 .pokemon-card, .board-8x9 .line-card, .board-8x8 .pokemon-card, .board-8x8 .line-card {
+  aspect-ratio: 10 / 7 !important;
+}
+.board-8x10 .pokemon-card, .board-8x10 .line-card {
+  aspect-ratio: 10 / 8 !important;
+}
+.board-8x11 .pokemon-card, .board-8x11 .line-card, .board-8x12 .pokemon-card, .board-8x12 .line-card {
+  aspect-ratio: 10 / 9 !important;
 }
 .board-9x12 {
   grid-template-columns: repeat(14, calc(100% / 14));

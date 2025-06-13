@@ -18,6 +18,7 @@ import ToggleSound from "./components/ToggleSound";
 import ToggleMusic from "./components/ToggleMusic";
 import BattleModePage from "./pages/BattleModePage";
 import { getPlayerName } from "./utils/game";
+import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 
 function App() {
   const { t } = useTranslation();
@@ -50,45 +51,54 @@ function App() {
       history.push(Routes.PLAYER_PAGE);
     }
   }, [localPlayer]);
-
   return (
-    <div className="app">
-      {soundReady && (
-        <>
-          {/* <ToggleMusic />
-          <ToggleSound /> */}
-        </>
-      )}
-      {!soundReady && <h1>{t("Preparing resource...")}</h1>}
-      {soundReady && (
-        <Switch>
-          <Route path={Routes.MAIN_PAGE} exact>
-          <PlayerPage />
-          </Route>
-          <Route path={Routes.SINGLE_PLAYER_PAGE} exact>
-            <SinglePlayerPage />
-          </Route>
-          <Route path={Routes.MULTI_PLAYER_PAGE} exact>
-            <MultiPlayerPage />
-          </Route>
-          <Route path={Routes.SPEED_MODE_PAGE} exact>
-            <SpeedModePage />
-          </Route>
-          <Route path={Routes.SURVIVAL_MODE_PAGE} exact>
-            <SurvivalModePage />
-          </Route>
-          <Route path={`${Routes.BATTLE_MODE_PAGE}`} exact>
-            <BattleModePage />
-          </Route>
-          <Route path={Routes.PLAYER_PAGE} exact>
-            <PlayerPage />
-          </Route>
-          <Route path="*">
-            <MainPage />
-          </Route>
-        </Switch>
-      )}
-    </div>
+    <GoogleReCaptchaProvider
+      reCaptchaKey={process.env.REACT_APP_RECAPTCHA_SITE_KEY as string}
+      scriptProps={{
+        async: false,
+        defer: false,
+        appendTo: "head",
+        nonce: undefined,
+      }}
+    >
+      <div className="app">
+        {soundReady && (
+          <>
+            {/* <ToggleMusic />
+            <ToggleSound /> */}
+          </>
+        )}
+        {!soundReady && <h1>{t("Preparing resource...")}</h1>}
+        {soundReady && (
+          <Switch>
+            <Route path={Routes.MAIN_PAGE} exact>
+              <PlayerPage />
+            </Route>
+            <Route path={Routes.SINGLE_PLAYER_PAGE} exact>
+              <SinglePlayerPage />
+            </Route>
+            <Route path={Routes.MULTI_PLAYER_PAGE} exact>
+              <MultiPlayerPage />
+            </Route>
+            <Route path={Routes.SPEED_MODE_PAGE} exact>
+              <SpeedModePage />
+            </Route>
+            <Route path={Routes.SURVIVAL_MODE_PAGE} exact>
+              <SurvivalModePage />
+            </Route>
+            <Route path={`${Routes.BATTLE_MODE_PAGE}`} exact>
+              <BattleModePage />
+            </Route>
+            <Route path={Routes.PLAYER_PAGE} exact>
+              <PlayerPage />
+            </Route>
+            <Route path="*">
+              <MainPage />
+            </Route>
+          </Switch>
+        )}
+      </div>
+    </GoogleReCaptchaProvider>
   );
 }
 

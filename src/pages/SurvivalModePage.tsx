@@ -20,6 +20,8 @@ const SurvivalModePage = () => {
     if (Number.parseInt(level) >= 13) {
       endGame(true);
       setIsWin(true)
+    } else {
+      setIsWin(false)
     }
   }, [level])
   const hasTiming = () => {
@@ -30,7 +32,7 @@ const SurvivalModePage = () => {
   }
   return (
     <div className="game-container" style={{ position: 'relative' }}>
-        {isWin ? <GameSurvivalWinInfo /> : <GameSurvivalLoseInfo hasTiming={hasTiming()} />}
+        {isWin ? <GameSurvivalWinInfo isWin={isWin} /> : <GameSurvivalLoseInfo hasTiming={hasTiming()} />}
       <Helmet>
         <meta charSet="utf-8" />
         <title>Pika pika! - Survival mode board</title>

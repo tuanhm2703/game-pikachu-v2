@@ -30,8 +30,7 @@ const PokemonCard: FC<PokemonCardProps> = ({
         backgroundImage: `url(${pokemon.image ?? ""})`,
       }}
       className={`pokemon-card ${selected} ${hidden}`}
-    >
-      <div style={{ height:"90%", width:"90%", margin:"auto" }} onClick={() => {
+      onClick={() => {
         if (
           // !isSelected &&
           !pokemon.matched &&
@@ -40,8 +39,8 @@ const PokemonCard: FC<PokemonCardProps> = ({
         ) {
           selectPokemon(pokemon.nid, rowIndex, colIndex);
         }
-      }}/> 
-    </div>
+      }}
+    />
   );
 };
 

@@ -1,29 +1,45 @@
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import GameReplay from "./GameReplay";
 import { useGameActions } from "../../hooks/useGameActions";
 import { GameMode } from "../../types/game";
-import ReCAPTCHA from "react-google-recaptcha";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
-const GameSurvivalWinInfo: FC<{ hasTiming?: boolean }> = ({
+const GameSurvivalWinInfo: FC<{ hasTiming?: boolean, isWin: boolean }> = ({
   hasTiming = false,
+  isWin = false
 }) =>
 {
-  const { t } = useTranslation();
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const { replayGame } = useGameActions(GameMode.SURVIVAL_MODE);
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
   const [voucherCode, setVoucherCode] = useState<string>('');
-  const handleRecaptcha = async () =>
-  {
-    const code = await recaptchaRef.current?.executeAsync();
-    const response = await fetch(`https://beta.theciu.vn/api/minigame/pikachu/get-gift?turnstile_token=${code}`)
-    const data = await response.json();
-    setVoucherCode(data.data);
+
+  const handleRecaptcha = async () => {
+    try {
+      if (!executeRecaptcha) {
+        console.error('reCAPTCHA not initialized');
+        return;
+      }
+      const token = await executeRecaptcha('get_gift');
+      const response = await fetch(`https://beta.theciu.vn/api/minigame/pikachu/get-gift?turnstile_token=${token}`);
+      const data = await response.json();
+      setVoucherCode(data.data);
+    } catch (error) {
+      console.error('reCAPTCHA error:', error);
+    }
   }
-  useEffect(() =>
-  {
-    handleRecaptcha()
-  }, [])
+
+  const reset = () => {
+    setVoucherCode('');
+    replayGame('');
+  }
+
+  useEffect(() => {
+    if (isWin) {
+      handleRecaptcha();
+    }
+  }, [isWin]);
+
   return (
     <>
       <style>{`
@@ -58,12 +74,7 @@ const GameSurvivalWinInfo: FC<{ hasTiming?: boolean }> = ({
           </div>
         : <div className="loader"></div>}
         <p style={{ textAlign: 'center', fontSize: '12px', width: '220px', fontWeight: 'bold' }}>Vui lòng chụp màn hình voucher và đưa thu ngân khi thanh toán.</p>
-        <GameReplay action={replayGame} />
-        <ReCAPTCHA
-          sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY as string}
-          size="invisible"
-          ref={recaptchaRef}
-        />
+        <GameReplay action={reset} />
       </div>
     </>
   );

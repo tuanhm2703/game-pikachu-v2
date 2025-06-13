@@ -32,7 +32,7 @@ const PokemonCard: FC<PokemonCardProps> = ({
       className={`pokemon-card ${selected} ${hidden}`}
       onClick={() => {
         if (
-          !isSelected &&
+          // !isSelected &&
           !pokemon.matched &&
           status === GameStatus.RUNNING &&
           pokemon.nid

@@ -3,12 +3,13 @@ import GameOverlay from "../components/GameOverlay";
 import { useRecoilValue } from "recoil";
 import gameState from "../recoil/atoms/gameState";
 import GameSurvivalInfo from "../components/Game/GameSurvivalInfo";
-import { GameLevel, GameMode, LEVEL_MAX } from "../types/game";
+import { GameLevel, GameMode, GameStatus, LEVEL_MAX } from "../types/game";
 import { Helmet } from "react-helmet";
 import { useGameActions } from "../hooks/useGameActions";
 import GameReplay from "../components/Game/GameReplay";
 import { useEffect, useState } from "react";
 import GameSurvivalWinInfo from "../components/Game/GameSurvivalWinInfo";
+import GameSurvivalLoseInfo from "../components/Game/GameSurvivalLoseInfo";
 import './css/survival-page.css';
 const SurvivalModePage = () => {
   const { status } = useRecoilValue(gameState);
@@ -16,14 +17,20 @@ const SurvivalModePage = () => {
   const { level } = useRecoilValue(gameState);
   const [isWin, setIsWin] = useState(false);
   useEffect(() => {
-    if (level === GameLevel.LEVEL_13) {
+    if (level >= GameLevel.LEVEL_13) {
       endGame(true);
       setIsWin(true)
     }
   }, [level])
+  const hasTiming = () => {
+    if (status === GameStatus.PENDING) {
+      return false
+    }
+    return true
+  }
   return (
     <div className="game-container" style={{ position: 'relative' }}>
-        {isWin ? <GameSurvivalWinInfo /> : <GameSurvivalInfo />}
+        {isWin ? <GameSurvivalWinInfo /> : <GameSurvivalLoseInfo hasTiming={hasTiming()} />}
       <Helmet>
         <meta charSet="utf-8" />
         <title>Pika pika! - Survival mode board</title>

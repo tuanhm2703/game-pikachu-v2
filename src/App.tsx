@@ -14,11 +14,9 @@ import useLocalStorage from "./hooks/useLocalStorage";
 import SurvivalModePage from "./pages/SurvivalModePage";
 import playerState from "./recoil/atoms/playerState";
 import PlayerPage from "./pages/PlayerPage";
-import ToggleSound from "./components/ToggleSound";
-import ToggleMusic from "./components/ToggleMusic";
+
 import BattleModePage from "./pages/BattleModePage";
 import { getPlayerName } from "./utils/game";
-import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 
 function App() {
   const { t } = useTranslation();
@@ -52,15 +50,7 @@ function App() {
     }
   }, [localPlayer]);
   return (
-    <GoogleReCaptchaProvider
-      reCaptchaKey={process.env.REACT_APP_RECAPTCHA_SITE_KEY as string}
-      scriptProps={{
-        async: false,
-        defer: false,
-        appendTo: "head",
-        nonce: undefined,
-      }}
-    >
+
       <div className="app">
         {soundReady && (
           <>
@@ -98,7 +88,7 @@ function App() {
           </Switch>
         )}
       </div>
-    </GoogleReCaptchaProvider>
+
   );
 }
 

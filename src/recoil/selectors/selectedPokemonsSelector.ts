@@ -16,15 +16,8 @@ const selectedPokemonsSelector = selector({
     const selectedPokemons = get(selectedPokemonsState);
 
     const cloneSelectedPokemons = [...selectedPokemons];
-    if (cloneSelectedPokemons.length === 1) {
-      if (cloneSelectedPokemons[0].nid === (newValue as PokemonCoords).nid) {
-        cloneSelectedPokemons.shift();
-      } else {
-        cloneSelectedPokemons.push(newValue as PokemonCoords);
-      }
-    } else {
-      cloneSelectedPokemons.push(newValue as PokemonCoords);
-    }
+
+    cloneSelectedPokemons.push(newValue as PokemonCoords);
     const {
       connectingLinePoints,
       newMatrix,

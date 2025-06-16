@@ -69,6 +69,29 @@
   letter-spacing: 2px;
 }
 
+.survivalButton {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 7px 18px;
+  border-radius: 18px;
+  border: none;
+  background: #fff;
+  color: #A80000;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(210, 33, 40, 0.10);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s, color 0.2s;
+}
+.survivalButton:hover, .survivalButton:focus {
+  background: #fbeaea;
+  color: #A80000;
+  transform: translateY(-1px) scale(1.03);
+  box-shadow: 0 4px 16px rgba(210, 33, 40, 0.18);
+}
+
 @media (orientation: landscape) {
   .overlay {
     flex-direction: row;

@@ -1,27 +1,19 @@
 import { FC, useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
 import GameReplay from "./GameReplay";
 import { useGameActions } from "../../hooks/useGameActions";
 import { GameMode } from "../../types/game";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 const GameSurvivalWinInfo: FC<{ hasTiming?: boolean, isWin: boolean }> = ({
   hasTiming = false,
   isWin = false
 }) =>
 {
-  const { executeRecaptcha } = useGoogleReCaptcha();
   const { replayGame } = useGameActions(GameMode.SURVIVAL_MODE);
   const [voucherCode, setVoucherCode] = useState<string>('');
 
   const handleRecaptcha = async () => {
     try {
-      if (!executeRecaptcha) {
-        console.error('reCAPTCHA not initialized');
-        return;
-      }
-      const token = await executeRecaptcha('get_gift');
-      const response = await fetch(`https://beta.theciu.vn/api/minigame/pikachu/get-gift?turnstile_token=${token}&version=v3`);
+      const response = await fetch(`https://beta.theciu.vn/api/minigame/pikachu/get-gift`);
       const data = await response.json();
       setVoucherCode(data.data);
     } catch (error) {

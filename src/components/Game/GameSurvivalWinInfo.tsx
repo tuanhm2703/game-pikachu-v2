@@ -13,7 +13,7 @@ const GameSurvivalWinInfo: FC<{ hasTiming?: boolean, isWin: boolean }> = ({
 
   const handleRecaptcha = async () => {
     try {
-      const response = await fetch(`https://beta.theciu.vn/api/minigame/pikachu/get-gift`);
+      const response = await fetch(`https://api.theciu.vn/api/minigame/pikachu/get-gift`);
       const data = await response.json();
       setVoucherCode(data.data);
     } catch (error) {

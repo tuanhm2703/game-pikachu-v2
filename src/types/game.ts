@@ -75,6 +75,7 @@ export interface GameState {
   pokemons: Record<string, Pokemon>;
   matrix: Pokemon[][];
   level: GameLevel;
+  remainingTime: number;
 }
 
 export interface GameOverlayState {

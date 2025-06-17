@@ -16,8 +16,8 @@ const selectedPokemonsSelector = selector({
     const selectedPokemons = get(selectedPokemonsState);
 
     const cloneSelectedPokemons = [...selectedPokemons];
-
     cloneSelectedPokemons.push(newValue as PokemonCoords);
+
     const {
       connectingLinePoints,
       newMatrix,

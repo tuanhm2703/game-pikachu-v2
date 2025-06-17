@@ -157,7 +157,7 @@ const SurvivalModePage = () =>
                 (e.currentTarget as HTMLButtonElement).style.boxShadow = '0 1px 2px rgba(210,33,40,0.08)';
               }}
             >
-              Thu gọn <span style={{ verticalAlign: 'middle', display: 'inline-block', height: '7px', paddingLeft: '2px' }}><MinimalizeIcon fill="#fff" width={7} height={7} /></span>
+              Mở rộng <span style={{ verticalAlign: 'middle', display: 'inline-block', height: '7px', paddingLeft: '2px' }}><MinimalizeIcon fill="#fff" width={7} height={7} /></span>
             </button>
           </div>
         </div>

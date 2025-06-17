@@ -1,6 +1,6 @@
 import { FC, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import { useGameActions } from "../../hooks/useGameActions";
 import gameOverlayState from "../../recoil/atoms/gameOverlayState";
 import gameSoundState from "../../recoil/atoms/gameSoundState";
@@ -28,6 +28,7 @@ const GameSurvivalTiming: FC<{ hasTiming: boolean }> = ({
   const { level } = useParams<{ level: string }>();
   const { t } = useTranslation();
   const { status, pokemons, matrix, row, col } = useRecoilValue(gameState);
+  const setGame = useSetRecoilState(gameState);
   const { playRisingPopSound, playGlugSound } = useRecoilValue(gameSoundState);
   const [timingState, setTimingState] = useState(0);
   const timing = useRef(0);
@@ -76,6 +77,10 @@ const GameSurvivalTiming: FC<{ hasTiming: boolean }> = ({
           timing.current++;
           suggestTiming.current++;
           remainTiming.current--;
+          setGame((prevGame) => ({
+            ...prevGame,
+            remainingTime: remainTiming.current,
+          }));
           setTimingState(timingState + 1);
         }, 1000);
       }
